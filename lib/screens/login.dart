@@ -14,6 +14,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final email = TextEditingController();
   final password = TextEditingController();
+
+  void _initState() {
+    super.initState();
+    _focusNode1.addListener(() {
+      setState(() {});
+    });
+    super.initState();
+    _focusNode2.addListener(() {
+      setState(() {});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +37,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 20),
               image(),
               const SizedBox(height: 50),
-              textfield(email, _focusNode1, "Email", Icons.email),
+              textfield(email, _focusNode1, "Emaill", Icons.email),
               const SizedBox(height: 10),
               textfield(password, _focusNode2, "Password", Icons.lock)
             ],
@@ -35,7 +47,8 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget textfield(TextEditingController _controller, FocusNode _focusNode, String typeName, IconData _icon) {
+  Widget textfield(TextEditingController _controller, FocusNode _focusNode,
+      String typeName, IconData _icon) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
       child: Container(
